@@ -1,23 +1,26 @@
 // Interactivity: navbar toggle, scroll reveal, form validation, current year
 
-// Navbar toggle
+// Navbar toggle with animated hamburger and sliding mobile menu
 const navToggleButton = document.getElementById('navToggle');
 const mobileNav = document.getElementById('mobileNav');
 if (navToggleButton && mobileNav) {
   navToggleButton.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.contains('hidden') === false;
-    if (isOpen) {
-      mobileNav.classList.add('hidden');
+    const open = mobileNav.classList.contains('open');
+    if (open) {
+      mobileNav.classList.remove('open');
+      navToggleButton.classList.remove('is-open');
       navToggleButton.setAttribute('aria-expanded', 'false');
     } else {
-      mobileNav.classList.remove('hidden');
+      mobileNav.classList.add('open');
+      navToggleButton.classList.add('is-open');
       navToggleButton.setAttribute('aria-expanded', 'true');
     }
   });
   // Close nav on link click
   mobileNav.querySelectorAll('a').forEach((a) => {
     a.addEventListener('click', () => {
-      mobileNav.classList.add('hidden');
+      mobileNav.classList.remove('open');
+      navToggleButton.classList.remove('is-open');
       navToggleButton.setAttribute('aria-expanded', 'false');
     });
   });
@@ -25,7 +28,7 @@ if (navToggleButton && mobileNav) {
 
 // Scroll reveal
 const revealElements = () => {
-  const candidates = document.querySelectorAll('section h2, .service-card, .testimonial, form, .kicker, h1');
+  const candidates = document.querySelectorAll('section h2, .card, .testimonial, form, .kicker, h1, .reveal, .zoom');
   candidates.forEach((el) => el.classList.add('reveal'));
   const observer = new IntersectionObserver(
     (entries) => {
@@ -94,5 +97,6 @@ if (document.readyState === 'loading') {
 } else {
   revealElements();
 }
+
 
 

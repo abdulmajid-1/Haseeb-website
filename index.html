@@ -25,6 +25,81 @@
           Roboto, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji",
           "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       }
+      /* Hover/rounded/transition utilities for root index */
+      .rounded {
+        border-radius: 0.25rem;
+      }
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+      .rounded-xl {
+        border-radius: 0.75rem;
+      }
+      .transition {
+        transition: all 0.2s ease;
+      }
+      .transition-all {
+        transition: all 0.25s ease;
+      }
+      .hover\:scale-105:hover {
+        transform: scale(1.05);
+      }
+      .hover\:underline:hover {
+        text-decoration: underline;
+      }
+      .shadow-sm {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      }
+      .card {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        background: #fff;
+        padding: 1.25rem;
+      }
+      .card:hover {
+        border-color: rgba(0, 0, 0, 0.3);
+      }
+      .burger {
+        width: 22px;
+        height: 18px;
+        position: relative;
+      }
+      .burger span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #000;
+        transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease,
+          bottom 0.2s ease;
+      }
+      .burger span:nth-child(1) {
+        top: 0;
+      }
+      .burger span:nth-child(2) {
+        top: 8px;
+      }
+      .burger span:nth-child(3) {
+        bottom: 0;
+      }
+      #mobileNav {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease, opacity 0.25s ease;
+      }
+      #mobileNav.open {
+        max-height: 320px;
+        opacity: 1;
+      }
+      .is-open .burger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .is-open .burger span:nth-child(2) {
+        opacity: 0;
+      }
+      .is-open .burger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
     </style>
   </head>
   <body class="bg-white text-black">
@@ -58,26 +133,15 @@
         </a>
         <button
           id="navToggle"
-          class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded border border-black/10 hover:border-black/30 transition-colors"
+          class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg border border-black/10 transition-all"
           aria-expanded="false"
           aria-controls="primaryNav"
           aria-label="Toggle navigation"
         >
           <span class="sr-only">Open menu</span>
-          <svg
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
+          <span class="burger" aria-hidden="true"
+            ><span></span><span></span><span></span
+          ></span>
         </button>
         <ul id="primaryNav" class="hidden md:flex items-center gap-8 text-sm">
           <li><a class="nav-link" href="#home">Home</a></li>
@@ -86,15 +150,14 @@
           <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div
-        id="mobileNav"
-        class="md:hidden hidden border-t border-black/10 bg-white"
-      >
+      <div id="mobileNav" class="md:hidden border-t border-black/10 bg-white">
         <ul class="mx-auto max-w-[var(--ca-max-w)] px-4 py-2 space-y-1 text-sm">
-          <li><a class="mobile-link" href="#home">Home</a></li>
-          <li><a class="mobile-link" href="#about">About</a></li>
-          <li><a class="mobile-link" href="#services">Services</a></li>
-          <li><a class="mobile-link" href="#contact">Contact</a></li>
+          <li><a class="mobile-link transition" href="#home">Home</a></li>
+          <li><a class="mobile-link transition" href="#about">About</a></li>
+          <li>
+            <a class="mobile-link transition" href="#services">Services</a>
+          </li>
+          <li><a class="mobile-link transition" href="#contact">Contact</a></li>
         </ul>
       </div>
     </header>
@@ -283,7 +346,7 @@
                     type="text"
                     required
                     class="form-input"
-                    placeholder="Jane Doe"
+                    placeholder="your name"
                   />
                   <p class="form-error" data-error-for="name"></p>
                 </div>
@@ -295,7 +358,7 @@
                     type="email"
                     required
                     class="form-input"
-                    placeholder="jane@company.com"
+                    placeholder="youremail@company.com"
                   />
                   <p class="form-error" data-error-for="email"></p>
                 </div>
@@ -367,6 +430,6 @@
       };
       addStyles();
     </script>
-    <script src="./main.js"></script>
+    <script src="./src/main.js"></script>
   </body>
 </html>
