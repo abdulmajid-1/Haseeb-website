@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haseeb & Co. | Chartered Accountants</title>
+    <title>Slab Consultancy</title>
     <meta
       name="description"
       content="Professional chartered accountancy firm offering audit, tax, advisory, and compliance services."
     />
     <link href="src/output.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="assets/logo-pic.png" />
+    <link rel="icon" type="image/png" href="assets/logo-pic-2.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -106,15 +106,6 @@
     <header
       class="sticky top-0 z-50 border-b border-black/10 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70"
     >
-      <!-- <div class="border-b border-black/10">
-        <div class="mx-auto max-w-[var(--ca-max-w)] px-4 py-2 text-xs text-black/70 flex items-center justify-between gap-4">
-          <div class="flex flex-wrap items-center gap-4">
-            <a href="mailto:info@haseebca.com" class="hover:underline">info@haseebca.com</a>
-            <a href="tel:+11234567890" class="hover:underline">+1 123 456 7890</a>
-          </div>
-          <div class="hidden md:block">Mon–Fri, 9:00–18:00</div>
-        </div>
-      </div> -->
       <nav
         class="mx-auto flex max-w-[var(--ca-max-w)] items-center justify-between px-4 py-4"
       >
@@ -123,13 +114,9 @@
           class="group inline-flex items-baseline gap-2"
           aria-label="Go to home"
         >
-          <span class="text-xl font-semibold tracking-tight"
-            >Haseeb &amp; Co.</span
-          >
-          <span
-            class="text-xs uppercase tracking-widest text-black/60 group-hover:text-black/80 transition-colors"
-            >Chartered Accountants</span
-          >
+          <span class="text-3xl font-semibold tracking-tight"
+            >Slab Consultancy
+          </span>
         </a>
         <button
           id="navToggle"
@@ -177,11 +164,12 @@
                 class="mt-3 text-3xl md:text-5xl font-semibold leading-tight tracking-tight"
               >
                 Chartered Accountants focused on clarity, compliance, and growth
+                <!-- We file , you relax -->
               </h1>
               <p class="mt-4 max-w-prose text-black/70">
-                We provide audit, tax, and advisory services for SMEs and
-                corporates. Our approach is precise, responsive, and strictly
-                aligned with professional standards.
+                We provide professional taxation services to help individuals
+                and businesses stay compliant, optimize their tax planning, and
+                manage all aspects of tax filings with accuracy and efficiency.
               </p>
               <div class="mt-8 flex flex-wrap gap-3">
                 <a
@@ -215,10 +203,10 @@
                 About our firm
               </h2>
               <p class="mt-4 text-black/70">
-                Haseeb &amp; Co. is a partner-led practice delivering assurance,
-                taxation, and advisory services. We combine technical depth with
-                pragmatic guidance, enabling clients to make confident
-                decisions.
+                Slab Consultancy is a professional firm specializing in taxation
+                services. We provide reliable and compliant tax solutions,
+                helping individuals and businesses manage their tax obligations
+                efficiently and effectively.
               </p>
               <ul class="mt-6 space-y-2 text-sm text-black/70">
                 <li class="flex items-start gap-3">
@@ -254,45 +242,205 @@
             <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
               Services
             </h2>
-            <!-- <span class="text-xs uppercase tracking-widest text-black/60"
-              >Audit • Tax • Advisory • Compliance</span
-            > -->
           </div>
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article class="service-card">
-              <h3 class="service-title">Audit &amp; Assurance</h3>
-              <p class="service-copy">
-                External audits, reviews, and agreed-upon procedures with clear
-                reporting.
-              </p>
-            </article>
-            <article class="service-card">
-              <h3 class="service-title">Taxation</h3>
-              <p class="service-copy">
-                Corporate and individual tax planning, filings, and
-                representation.
-              </p>
-            </article>
-            <article class="service-card">
-              <h3 class="service-title">Advisory</h3>
-              <p class="service-copy">
-                Business structuring, valuation support, and transaction
-                readiness.
-              </p>
-            </article>
-            <!-- <article class="service-card">
-              <h3 class="service-title">Accounting</h3>
-              <p class="service-copy">
-                Monthly bookkeeping, financial statements, and management
-                reporting.
-              </p>
-            </article> -->
+          <div class="grid gap-6">
+            <article
+              class="service-card bg-white border border-black/10 rounded-xl p-6 md:p-8"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <h3 class="service-title text-2xl md:text-3xl">Taxation</h3>
+                  <p class="service-copy mt-2 max-w-prose">
+                    Expert taxation services to keep you compliant and
+                    optimized. Choose a type below to learn more.
+                  </p>
+                </div>
+                <div class="text-3xl" aria-hidden="true"></div>
+              </div>
 
-            <article class="service-card">
-              <h3 class="service-title">Payroll</h3>
-              <p class="service-copy">
-                End-to-end payroll processing, payslips, and compliance filings.
-              </p>
+              <div class="mt-6">
+                <div
+                  id="taxationTabs"
+                  role="tablist"
+                  aria-label="Taxation types"
+                  class="flex flex-wrap gap-2"
+                >
+                  <button
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="panel-ntn"
+                    id="tab-ntn"
+                    data-tab="ntn"
+                    class="tab rounded border border-black/20 px-3 py-1.5 text-sm transition-colors hover:border-black"
+                  >
+                    NTN Registration
+                  </button>
+                  <button
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="panel-income"
+                    id="tab-income"
+                    data-tab="income"
+                    class="tab rounded border border-black/20 px-3 py-1.5 text-sm transition-colors hover:border-black"
+                  >
+                    Income Tax Return
+                  </button>
+                  <button
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="panel-sales"
+                    id="tab-sales"
+                    data-tab="sales"
+                    class="tab rounded border border-black/20 px-3 py-1.5 text-sm transition-colors hover:border-black"
+                  >
+                    Sales Tax Return Filing
+                  </button>
+                  <button
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="panel-advisory"
+                    id="tab-advisory"
+                    data-tab="advisory"
+                    class="tab rounded border border-black/20 px-3 py-1.5 text-sm transition-colors hover:border-black"
+                  >
+                    Taxation Advisory
+                  </button>
+                </div>
+
+                <div class="mt-6">
+                  <div id="panel-ntn" role="tabpanel" aria-labelledby="tab-ntn">
+                    <h4 class="text-xl font-semibold">NTN Registration</h4>
+                    <p class="mt-2 text-black/70">
+                      Assistance with obtaining or updating your National Tax
+                      Number to stay compliant with FBR requirements.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-sm text-black/70">
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span
+                          >Eligibility assessment and document checklist</span
+                        >
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>Online portal registration and submission</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>Follow-up until issuance</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div
+                    id="panel-income"
+                    role="tabpanel"
+                    aria-labelledby="tab-income"
+                    hidden
+                  >
+                    <h4 class="text-xl font-semibold">Income Tax Return</h4>
+                    <p class="mt-2 text-black/70">
+                      Preparation and submission of annual income tax returns
+                      for individuals and businesses with complete documentation
+                      support.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-sm text-black/70">
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>Data gathering and reconciliations</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>Return preparation and review</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>E-filing and acknowledgement</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div
+                    id="panel-sales"
+                    role="tabpanel"
+                    aria-labelledby="tab-sales"
+                    hidden
+                  >
+                    <h4 class="text-xl font-semibold">
+                      Sales Tax Return Filing
+                    </h4>
+                    <p class="mt-2 text-black/70">
+                      Accurate and timely filing of monthly or quarterly sales
+                      tax returns, ensuring compliance with current tax laws.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-sm text-black/70">
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>Input/output tax analysis</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>Working papers and reconciliations</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>Submission and compliance calendar</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div
+                    id="panel-advisory"
+                    role="tabpanel"
+                    aria-labelledby="tab-advisory"
+                    hidden
+                  >
+                    <h4 class="text-xl font-semibold">Taxation Advisory</h4>
+                    <p class="mt-2 text-black/70">
+                      Expert consultancy to optimize tax planning, minimize
+                      liabilities, and make informed financial decisions.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-sm text-black/70">
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>Transaction and withholding advisory</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>Notices and representation support</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span
+                          class="mt-1 h-1.5 w-1.5 rounded-full bg-black"
+                        ></span
+                        ><span>Tax efficiency planning</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </article>
           </div>
         </div>
@@ -313,22 +461,26 @@
           <div class="mb-6 grid gap-4 md:grid-cols-3">
             <div class="border border-black/10 p-4 md:col-span-1">
               <h3 class="font-semibold">Firm information</h3>
-              <ul class="mt-3 space-y-2 text-sm text-black/80">
+              <ul class="mt-3 space-y-3 text-sm text-black/80">
                 <li>
                   <span class="text-black/60">Email:</span>
-                  <a href="mailto:info@haseebca.com" class="hover:underline"
-                    >info@haseebca.com</a
-                  >
+                  <a
+                    href="mailto:slabconsultancy@gmail.com"
+                    class="hover:underline"
+                    >slabconsultancy@gmail.com
+                  </a>
                 </li>
+                <br />
                 <li>
                   <span class="text-black/60">Phone:</span>
-                  <a href="tel:+11234567890" class="hover:underline"
-                    >+1 123 456 7890</a
+                  <a href="tel:+92 3054286000" class="hover:underline"
+                    >+92 3054286000</a
                   >
                 </li>
+                <br />
                 <li>
-                  <span class="text-black/60">Address:</span> 123 Finance
-                  Street, Suite 405, Karachi
+                  <span class="text-black/60">Address:</span> SA Garden phase 2,
+                  Muridke, Pakistan
                 </li>
               </ul>
             </div>
@@ -375,17 +527,12 @@
                   <p class="form-error" data-error-for="message"></p>
                 </div>
                 <div
-                  class="col-span-full flex items-center justify-between gap-4"
+                  class="col-span-full flex items-center justify-between gap-4 form-actions"
                 >
                   <div class="text-xs text-black/60">
                     By submitting, you agree to our standard terms.
                   </div>
-                  <button
-                    type="submit"
-                    class="inline-flex items-center justify-center rounded border border-black bg-black px-4 py-2 text-white transition-colors hover:bg-white hover:text-black"
-                  >
-                    Send
-                  </button>
+                  <button type="submit" class="submit-primary">Send</button>
                 </div>
               </form>
             </div>
@@ -398,9 +545,7 @@
       <div
         class="mx-auto max-w-[var(--ca-max-w)] px-4 py-10 text-sm text-black/70 flex flex-col items-center justify-center text-center gap-4"
       >
-        <p>
-          &copy; <span id="year"></span> Haseeb &amp; Co. Chartered Accountants
-        </p>
+        <p>&copy; <span id="year"></span> Slab Consultancy</p>
       </div>
     </footer>
 
@@ -419,12 +564,27 @@
         .testimonial { border: 1px solid rgba(0,0,0,.12); padding: 1.25rem; background: #fff; }
         .testimonial blockquote { font-style: normal; }
         .testimonial figcaption { margin-top: .5rem; font-size: .85rem; color: rgba(0,0,0,.6); }
-        .form-label { display:block; font-size:.9rem; margin-bottom:.375rem; }
-        .form-input { width:100%; border:1px solid rgba(0,0,0,.2); border-radius:.25rem; padding:.625rem .75rem; background:#fff; color:#000; outline:none; transition:border-color .2s, box-shadow .2s; }
+        .form-label { display:block; font-size:.9rem; margin-bottom:.375rem; color: rgba(0,0,0,.8); }
+        .form-input { width:100%; border:1px solid rgba(0,0,0,.2); border-radius:.5rem; padding:.625rem .875rem; background:#fff; color:#000; outline:none; transition:border-color .2s, box-shadow .2s, background-color .2s; }
+        .form-input:hover { border-color: rgba(0,0,0,.45); }
         .form-input:focus { border-color:#000; box-shadow:0 0 0 3px rgba(0,0,0,.08); }
+        .form-input.error { border-color:#000; box-shadow:0 0 0 3px rgba(255,0,0,.12); background: rgba(255,0,0,.02); }
         .form-error { min-height: 1rem; font-size:.8rem; color:#000; opacity:.8; }
+        .submit-primary { display:inline-flex; align-items:center; justify-content:center; border:1px solid #000; background:#000; color:#fff; padding:.625rem 1rem; border-radius:.5rem; transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s; }
+        .submit-primary:hover { background:#fff; color:#000; }
         .reveal { opacity:0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
         .reveal.in { opacity:1; transform: translateY(0); }
+        /* Tabs */
+        .tab { display:inline-flex; align-items:center; justify-content:center; gap:.375rem; border:1px solid rgba(0,0,0,.2); background:#fff; color:#000; border-radius:.5rem; padding:.625rem .875rem; font-weight:500; transition: border-color .2s, background-color .2s, color .2s, box-shadow .2s; }
+        .tab:hover { border-color: rgba(0,0,0,.6); }
+        .tab[aria-selected="true"] { background:#000; color:#fff; border-color:#000; box-shadow: 0 0 0 2px #000 inset; }
+        .tab:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+        /* Responsive tab layout */
+        #taxationTabs { display:flex; flex-wrap:wrap; }
+        @media (max-width: 479px) { #taxationTabs .tab { flex: 1 1 100%; } }
+        @media (min-width: 480px) and (max-width: 767px) { #taxationTabs .tab { flex: 1 1 calc(50% - .5rem); } }
+        @media (min-width: 768px) { #taxationTabs .tab { flex: 0 0 auto; } }
+        @media (max-width: 479px) { .form-actions { flex-direction: column; align-items: stretch; gap:.75rem; } .submit-primary { width: 100%; } }
         `;
         document.head.appendChild(style);
       };
