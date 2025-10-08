@@ -124,14 +124,29 @@ form.addEventListener("submit", async (e) => {
 });
 
 function showAlert(message, type) {
+  // Clear any existing classes and timeouts
+  alertBox.className = "";
   alertBox.textContent = message;
-  alertBox.className = type === "success" ? "success" : "error";
-  alertBox.classList.remove("hidden");
 
-  // Hide alert automatically after 4 seconds
+  // Add the appropriate type class
+  alertBox.classList.add(type);
+
+  // Trigger the show animation
   setTimeout(() => {
-    alertBox.classList.add("hidden");
-  }, 4000);
+    alertBox.classList.add("show");
+  }, 10);
+
+  // Hide alert automatically after 5 seconds with smooth animation
+  setTimeout(() => {
+    alertBox.classList.remove("show");
+    alertBox.classList.add("hide");
+
+    // Remove the element from DOM after animation completes
+    setTimeout(() => {
+      alertBox.className = "";
+      alertBox.textContent = "";
+    }, 400);
+  }, 5000);
 }
 
 // Current year in footer

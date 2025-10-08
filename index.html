@@ -576,6 +576,66 @@
         .submit-primary:hover { background:#fff; color:#000; }
         .reveal { opacity:0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
         .reveal.in { opacity:1; transform: translateY(0); }
+        
+        /* Enhanced Alert Styles */
+        #formAlert {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          z-index: 1000;
+          max-width: 400px;
+          padding: 1rem 1.5rem;
+          border-radius: 12px;
+          font-weight: 500;
+          font-size: 0.95rem;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+          transform: translateX(100%);
+          opacity: 0;
+          transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        #formAlert.success {
+          background: linear-gradient(135deg, #10b981, #059669);
+          color: white;
+          border-color: rgba(16, 185, 129, 0.3);
+        }
+        
+        #formAlert.error {
+          background: linear-gradient(135deg, #ef4444, #dc2626);
+          color: white;
+          border-color: rgba(239, 68, 68, 0.3);
+        }
+        
+        #formAlert.show {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        
+        #formAlert.hide {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 640px) {
+          #formAlert {
+            top: 10px;
+            right: 10px;
+            left: 10px;
+            max-width: none;
+            transform: translateY(-100%);
+          }
+          
+          #formAlert.show {
+            transform: translateY(0);
+          }
+          
+          #formAlert.hide {
+            transform: translateY(-100%);
+          }
+        }
         /* Tabs */
         .tab { display:inline-flex; align-items:center; justify-content:center; gap:.375rem; border:1px solid rgba(0,0,0,.2); background:#fff; color:#000; border-radius:.5rem; padding:.625rem .875rem; font-weight:500; transition: border-color .2s, background-color .2s, color .2s, box-shadow .2s; }
         .tab:hover { border-color: rgba(0,0,0,.6); }
