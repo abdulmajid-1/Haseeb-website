@@ -101,54 +101,38 @@ const initTaxationTabs = () => {
 };
 
 // Form validation
+
 const form = document.getElementById("contactForm");
-const setError = (name, message) => {
-  const p = document.querySelector(`[data-error-for="${name}"]`);
-  if (p) p.textContent = message || "";
-};
-const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+const alertBox = document.getElementById("formAlert");
 
-// if (form) {
-//   form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     const name = /** @type {HTMLInputElement} */ (document.getElementById('name'));
-//     const email = /** @type {HTMLInputElement} */ (document.getElementById('email'));
-//     const message = /** @type {HTMLTextAreaElement} */ (document.getElementById('message'));
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
 
-//     let valid = true;
-//     if (!name.value.trim()) {
-//       setError('name', 'Please enter your full name');
-//       name.classList.add('error');
-//       valid = false;
-//     } else {
-//       setError('name');
-//       name.classList.remove('error');
-//     }
-//     if (!email.value.trim() || !validateEmail(email.value)) {
-//       setError('email', 'Please enter a valid email');
-//       email.classList.add('error');
-//       valid = false;
-//     } else {
-//       setError('email');
-//       email.classList.remove('error');
-//     }
-//     if (!message.value.trim()) {
-//       setError('message', 'Please enter a short message');
-//       message.classList.add('error');
-//       valid = false;
-//     } else {
-//       setError('message');
-//       message.classList.remove('error');
-//     }
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { Accept: "application/json" },
+  });
 
-//     if (valid) {
-//       // Simulate success
-//       form.reset();
-//       [name, email, message].forEach((el) => el.classList.remove('error'));
-//       alert('Thanks! Your message has been sent.');
-//     }
-//   });
-// }
+  if (response.ok) {
+    form.reset();
+    showAlert("✅ Message sent successfully!", "success");
+  } else {
+    showAlert("⚠️ Please enter a valid email or try again later.", "error");
+  }
+});
+
+function showAlert(message, type) {
+  alertBox.textContent = message;
+  alertBox.className = type === "success" ? "success" : "error";
+  alertBox.classList.remove("hidden");
+
+  // Hide alert automatically after 4 seconds
+  setTimeout(() => {
+    alertBox.classList.add("hidden");
+  }, 4000);
+}
 
 // Current year in footer
 const yearEl = document.getElementById("year");
